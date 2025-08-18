@@ -40,5 +40,31 @@ int main() {
 	initializeopTab();
 	initializeregTab();
 	string line;
+	ifstream inputFile("input.txt");
+	ofstream outFile("intermediate_code.txt");
+	if (!inputFile.is_open()) {
+		cerr << "Error opening file." << endl;
+		return 1;
+	}
+	while(getline(inputFile, line)){
+		stringstream ss(line);
+		string token;
+		vector<string> tokens;
+		while(ss >> token) {
+			tokens.push_back(token);
+		}
+		if(tokens.empty()) continue;
+		for(string token : tokens){
+			auto it = opTab.find(token);
+			if (it != opTab.end()) {
+				outFile << it->second.first << " " << it->second.second << endl;
+			}
+			
+		}
+		if(tokens[0] == "START") {
+			if(tokens[1].empty()) lc = 0;
+			else lc = stoi(tokens[1]);
+		}
+	}
 	return 0;
 }
