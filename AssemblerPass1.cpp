@@ -62,8 +62,15 @@ int main() {
 			
 		}
 		if(tokens[0] == "START") {
-			if(tokens[1].empty()) lc = 0;
-			else lc = stoi(tokens[1]);
+			if(tokens[1].empty()){
+				lc = 0;
+				outFile << " - " << "AD, 01" << endl;
+			} 
+			else{
+				lc = stoi(tokens[1]);
+				outFile << " - " << "AD, 01" << "C, " << tokens[1] << endl;
+			}
+
 		}
 	}
 	return 0;
