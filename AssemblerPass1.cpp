@@ -64,13 +64,16 @@ int main() {
 		if(tokens[0] == "START") {
 			if(tokens[1].empty()){
 				lc = 0;
-				outFile << " - " << "AD, 01" << endl;
+				outFile << " - " << "AD, 01" << " - " << "C,0" << endl;
 			} 
 			else{
 				lc = stoi(tokens[1]);
 				outFile << " - " << "AD, 01" << "C, " << tokens[1] << endl;
 			}
 
+		}
+		if(tokens[0] == "END") {
+			outFile << to_string(lc) << "AD, 02" << " - " << endl;
 		}
 	}
 	return 0;
