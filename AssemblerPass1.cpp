@@ -75,6 +75,9 @@ int main() {
 		if(tokens[0] == "END") {
 			outFile << to_string(lc) << "AD, 02" << " - " << endl;
 		}
+		if(tokens[0] == "LTORG") {
+			outFile << to_string(lc) << "AD, 03" << " - " << endl;
+		}
 	}
 	return 0;
 }
