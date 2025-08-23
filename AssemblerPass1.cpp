@@ -78,6 +78,10 @@ int main() {
 		if(tokens[0] == "LTORG") {
 			outFile << to_string(lc) << "AD, 03" << " - " << endl;
 		}
+		if(tokens[0] == "ORIGIN") {
+			outFile << " - " << "AD, 04" << " - " << tokens[1] << endl;
+			lc = stoi(tokens[1]);
+		}
 	}
 	return 0;
 }
