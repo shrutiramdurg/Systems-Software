@@ -82,6 +82,9 @@ int main() {
 			outFile << " - " << "AD, 04" << " - " << tokens[1] << endl;
 			lc = stoi(tokens[1]);
 		}
+		if(tokens[0] == "EQU") {
+			outFile << " - " << "AD, 05" << " - " << tokens[1] << endl;
+		}
 	}
 	return 0;
 }
