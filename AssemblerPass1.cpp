@@ -85,6 +85,11 @@ int main() {
 		if(tokens[0] == "EQU") {
 			outFile << " - " << "AD, 05" << " - " << tokens[1] << endl;
 		}
+		if(tokens[1] == "DS") {
+			outFile << to_string(lc) << "DL, 01" << " - " << "C, " << tokens[2] << endl;
+			symTab[sym_tab_ptr++] = {lc, stoi(tokens[2])};
+			lc += stoi(tokens[2]);
+		}
 	}
 	return 0;
 }
